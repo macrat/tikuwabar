@@ -32,14 +32,14 @@ function Index({firstView = {}, news = [], schedule = {}, pricing = {}, access =
 }
 
 
-Index.getInitialProps = async ({req}) => {
+Index.getInitialProps = async ({query}) => {
     return {
-        firstView: await getFirstView(),
-        news: await getNews(),
-        schedule: await getSchedule(),
-        pricing: await getPricing(),
-        access: await getAccess(),
-        seo: await getSEO(),
+        firstView: await getFirstView(query.draftKey),
+        news: await getNews(query.draftKey),
+        schedule: await getSchedule(query.draftKey),
+        pricing: await getPricing(query.draftKey),
+        access: await getAccess(query.draftKey),
+        seo: await getSEO(query.draftKey),
     };
 };
 
