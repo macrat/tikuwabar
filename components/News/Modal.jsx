@@ -57,11 +57,9 @@ function NewsModal({id, title, createdAt, updatedAt, content, seo}) {
 
             <style jsx>{`
                 .news-modal--wrapper, .news-modal--closer {
-                    position: fixed;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
+                    position: absolute;
+                    width: 100vw;
+                    height: 100vh;
                 }
                 .news-modal--wrapper {
                     display: flex;
