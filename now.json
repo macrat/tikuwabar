@@ -3,5 +3,6 @@
     "env": {
       "MICROCMS_API_KEY": "@tikuwabar-cms-apikey"
     }
-  }
+  },
+  "alias": "tikuwabar.shojir.ooo"
 }
