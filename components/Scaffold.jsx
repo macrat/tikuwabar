@@ -7,9 +7,6 @@ function Scaffold({children, seo = {}}) {
     return (
         <>
             <Head>
-                <title>{seo.siteTitle}</title>
-                <meta name="description" content={seo.description} key="description" />
-
                 <link rel="icon" href="/icon.png" key="favicon" />
 
                 <JsonLD type="BarOrPub" properties={{

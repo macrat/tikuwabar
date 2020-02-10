@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import Scaffold from '../components/Scaffold';
 import FirstView from '../components/FirstView';
 import News from '../components/News';
@@ -17,6 +19,11 @@ export const config = {
 function Index({firstView = {}, news = [], schedule = {}, pricing = {}, access = {}, seo = {}}) {
     return (
         <Scaffold seo={seo}>
+            <Head>
+                <title>{seo.siteTitle}</title>
+                <meta name="description" content={seo.description} key="description" />
+            </Head>
+
             <FirstView {...firstView} />
 
             <main>

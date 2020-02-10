@@ -2,16 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import Section from '../Section';
+import Time from '../Time';
 import Modal from './Modal';
-
-
-function Time({time}) {
-    return (
-        <time datetime={time.toISOString()}>
-            {`${time.getFullYear()}.${time.getMonth() + 1}.${time.getDate()}`}
-        </time>
-    );
-}
 
 
 function News({news, seo}) {

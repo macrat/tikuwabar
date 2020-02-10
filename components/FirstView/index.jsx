@@ -19,7 +19,7 @@ function FirstView({image, topText}) {
                     position: relative;
                     width: 100%;
                     height: 600px;
-                    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.5)), url("${image.url}");
+                    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.5)), url("${image.url}");
                     background-size: cover;
                 }
                 .first-view--menu-wrapper {

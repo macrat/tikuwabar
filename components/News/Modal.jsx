@@ -1,17 +1,12 @@
+import DateTime from '../DateTime';
 import RawHTML from '../RawHTML';
-import JsonLD from '../JsonLD';
+import JsonLD from './JsonLD';
 
 
-function DateTime({time}) {
-    return (
-        <time datetime={time.toISOString()}>
-            {`${time.getFullYear()}.${time.getMonth() + 1}.${time.getDate()} ${time.getHours()}:${String(time.getMinutes()).padStart(2, '0')}`}
-        </time>
-    );
-}
 
+function NewsModal(props) {
+    const {id, title, createdAt, updatedAt, content, seo} = props;
 
-function NewsModal({id, title, createdAt, updatedAt, content, seo}) {
     return (
         <amp-lightbox id={id} layout="nodisplay">
             <div className="news-modal--wrapper">
@@ -36,24 +31,7 @@ function NewsModal({id, title, createdAt, updatedAt, content, seo}) {
 
                     <RawHTML html={content} />
 
-                    <JsonLD type="NewsArticle" properties={{
-                        headline: title,
-                        articleBody: content,
-                        dateCreated: createdAt,
-                        dateModified: updatedAt,
-                        datePublished: createdAt,
-                        author: 'ちくわバー',
-                        publisher: {
-                            '@type': 'Organization',
-                            name: 'ちくわバー',
-                            logo: {
-                                '@type': 'ImageObject',
-                                'url': '/logo.png',
-                            },
-                        },
-                        image: seo.image.url,
-                        mainEntityOfPage: '/',
-                    }} />
+                    <JsonLD {...props} />
                 </article>
             </div>
 
