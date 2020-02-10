@@ -1,10 +1,10 @@
 function SecionTitle({children}) {
     return (
-        <h1>
+        <h2>
             {children}
 
             <style jsx>{`
-                h1 {
+                h2 {
                     max-width: 800px;
                     margin: 0 auto;
                     padding: 0;
@@ -13,7 +13,7 @@ function SecionTitle({children}) {
                     font-weight: normal;
                 }
             `}</style>
-        </h1>
+        </h2>
     );
 }
 

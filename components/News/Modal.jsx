@@ -4,7 +4,9 @@ import JsonLD from '../JsonLD';
 
 function DateTime({time}) {
     return (
-        <time>{time.getFullYear()}.{time.getMonth() + 1}.{time.getDate()} {time.getHours()}:{String(time.getMinutes()).padStart(2, '0')}</time>
+        <time datetime={time.toISOString()}>
+            {`${time.getFullYear()}.${time.getMonth() + 1}.${time.getDate()} ${time.getHours()}:${String(time.getMinutes()).padStart(2, '0')}`}
+        </time>
     );
 }
 
@@ -16,6 +18,9 @@ function NewsModal({id, title, createdAt, updatedAt, content, seo}) {
                 <div className="news-modal--closer" on={`tap:${id}.close`} role="button" tabIndex="0" />
 
                 <article>
+                    <h2>{title}</h2>
+                    <div><DateTime time={new Date(createdAt)} /></div>
+
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         height="32"
@@ -28,9 +33,6 @@ function NewsModal({id, title, createdAt, updatedAt, content, seo}) {
                         <title>閉じる</title>
                         <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="#734c3d" />
                     </svg>
-
-                    <h2>{title}</h2>
-                    <div><DateTime time={new Date(createdAt)} /></div>
 
                     <RawHTML html={content} />
 

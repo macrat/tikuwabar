@@ -7,7 +7,9 @@ import Modal from './Modal';
 
 function Time({time}) {
     return (
-        <time>{time.getFullYear()}.{time.getMonth() + 1}.{time.getDate()}</time>
+        <time datetime={time.toISOString()}>
+            {`${time.getFullYear()}.${time.getMonth() + 1}.${time.getDate()}`}
+        </time>
     );
 }
 

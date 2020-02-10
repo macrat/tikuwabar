@@ -4,32 +4,32 @@ import TopText from './TopText';
 
 function FirstView({image, topText}) {
     return (
-        <div className="first-view">
-            <div className="first-view--menu-area">
-                <header>
+        <header>
+            <div className="first-view--menu-wrapper">
+                <div className="first-view--menu">
                     <h1>ちくわバー</h1>
                     <span>不慣れなおじさん一人でやってます</span>
                     <Menu />
-                </header>
+                </div>
             </div>
             <TopText text={topText} />
 
             <style jsx>{`
-                .first-view {
+                header {
                     position: relative;
                     width: 100%;
                     height: 600px;
                     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.5)), url("${image.url}");
                     background-size: cover;
                 }
-                .first-view--menu-area {
+                .first-view--menu-wrapper {
                     display: flex;
                     justify-content: center;
                     position: absolute;
                     top: 70px;
                     width: 100%;
                 }
-                header {
+                .first-view--menu {
                     text-align: center;
                 }
                 h1, span {
@@ -49,11 +49,11 @@ function FirstView({image, topText}) {
                     margin-bottom: 16px;
                 }
                 @media screen and (max-width: 420px) {
-                    .first-view {
+                    header {
                         position: unset;
                         height: auto;
                     }
-                    .first-view--menu-area {
+                    .first-view--menu-wrapper {
                         position: unset;
                         margin-bottom: 32px;
                     }
@@ -63,7 +63,7 @@ function FirstView({image, topText}) {
                     }
                 }
             `}</style>
-        </div>
+        </header>
     );
 }
 
