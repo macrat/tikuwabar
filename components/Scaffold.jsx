@@ -11,6 +11,9 @@ function Scaffold({children, seo = {}}) {
 
                 <JsonLD type="BarOrPub" properties={{
                     name: "ちくわバー",
+                    '@id': 'https://tikuwabar.shojir.ooo/',
+                    url: 'https://tikuwabar.shojir.ooo/',
+                    logo: 'https://tikuwabar.shojir.ooo/icon.png',
                     acceptsReservations: false,
                     openingHours: seo.openingHours,
                     priceRange: seo.priceRange,

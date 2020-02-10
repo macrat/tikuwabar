@@ -15,12 +15,12 @@ function NewsJsonLD({id, title, content, createdAt, updatedAt, seo}) {
                 name: 'ちくわバー',
                 logo: {
                     '@type': 'ImageObject',
-                    'url': '/logo.png',
+                    'url': 'https://tikuwabar.shojir.ooo/logo.png',
                 },
             },
             image: seo.image.url,
-            mainEntityOfPage: '/',
-            url: `/news/${id}`,
+            mainEntityOfPage: `https://tikuwabar.shojir.ooo/news/${id}`,
+            url: `https://tikuwabar.shojir.ooo/news/${id}`,
         }} />
     );
 }
