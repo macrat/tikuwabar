@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
-import JsonLD from './JsonLD';
+import JsonLD from '../JsonLD';
+import GoogleAnalytics from './GoogleAnalytics';
 
 
 function Scaffold({children, seo = {}}) {
@@ -22,6 +23,8 @@ function Scaffold({children, seo = {}}) {
                     telephone: seo.telephone,
                     image: seo.image.url,
                 }} />
+
+                <GoogleAnalytics id={process.env.GA_MEASUREMENT_ID} />
             </Head>
 
             {children}

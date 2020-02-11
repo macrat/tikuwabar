@@ -1,7 +1,8 @@
 {
   "build": {
     "env": {
-      "MICROCMS_API_KEY": "@tikuwabar-cms-apikey"
+      "MICROCMS_API_KEY": "@tikuwabar-cms-apikey",
+      "GA_MEASUREMENT_ID": "@tikuwabar-ga-id"
     }
   },
   "alias": "tikuwabar.shojir.ooo"
