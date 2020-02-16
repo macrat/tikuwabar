@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import HtmlToText from 'html-to-text';
 
 import Scaffold from '../../components/Scaffold';
 import Header from '../../components/Header';
@@ -21,7 +22,13 @@ function NewsArticle({firstView = {}, article = {}, seo = {}}) {
         <Scaffold seo={seo}>
             <Head>
                 <title>{`${article.title} | ${seo.siteTitle}`}</title>
-                <meta name="description" content={article.content.slice(300)} key="description" />
+                <meta
+                    name="description"
+                    content={HtmlToText.fromString(article.rawContent, {
+                        ignoreHref: true,
+                        ignoreImage: true,
+                    })}
+                    key="description" />
             </Head>
 
             <Header image={firstView.image} />
