@@ -55,7 +55,9 @@ function NewsIndex({firstView = {}, news = {}, seo = {}}) {
 }
 
 
-NewsIndex.getInitialProps = async ({query}) => {
+NewsIndex.getInitialProps = async ({query, res}) => {
+    res.setHeader('Cache-Control', 'max-age=12h, s-maxage=5m, public');
+
     return {
         firstView: await getFirstView(query.draftKey),
         news: await getNews(1000, query.draftKey),

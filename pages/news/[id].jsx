@@ -51,7 +51,9 @@ function NewsArticle({firstView = {}, article = {}, seo = {}}) {
 }
 
 
-NewsArticle.getInitialProps = async ({query}) => {
+NewsArticle.getInitialProps = async ({query, res}) => {
+    res.setHeader('Cache-Control', 'max-age=1d, s-maxage=30m, public');
+
     return {
         firstView: await getFirstView(query.draftKey),
         article: await getNewsArticle(query.id, query.draftKey),

@@ -39,7 +39,9 @@ function Index({firstView = {}, news = [], schedule = {}, pricing = {}, access =
 }
 
 
-Index.getInitialProps = async ({query}) => {
+Index.getInitialProps = async ({res, query}) => {
+    res.setHeader('Cache-Control', 'max-age=6h, s-maxage=5m, public');
+
     return {
         firstView: await getFirstView(query.draftKey),
         news: await getNews(query.draftKey),
