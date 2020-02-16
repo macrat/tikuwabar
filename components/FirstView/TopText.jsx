@@ -28,7 +28,7 @@ function TopText() {
                     article {
                         margin: 8px 16px 4px;
                 }
-                @media screen and (max-width: 420px) {
+                @media screen and (max-width: 460px) {
                     div {
                         position: unset;
                         padding: 8px 4px;

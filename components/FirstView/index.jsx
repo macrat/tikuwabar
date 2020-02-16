@@ -48,7 +48,7 @@ function FirstView({image, topText}) {
                     font-size: 24px;
                     margin-bottom: 16px;
                 }
-                @media screen and (max-width: 420px) {
+                @media screen and (max-width: 460px) {
                     header {
                         position: unset;
                         height: auto;
