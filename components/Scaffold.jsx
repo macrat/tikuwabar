@@ -9,6 +9,9 @@ function Scaffold({children, seo = {}}) {
             <Head>
                 <link rel="icon" href="/icon.png" key="favicon" />
                 <link rel="alternate" type="application/atom+xml" href="/news/feed.xml" title="ちくわバーからのお知らせフィード" key="feed" />
+                <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Serif+JP&display=swap" rel="stylesheet" />
+                <link href="https://fonts.gstatic.com" rel="preconnect" />
+                <link href="https://fonts.gstatic.com" rel="dns-prefetch" />
 
                 <JsonLD type="BarOrPub" properties={{
                     name: "ちくわバー",
@@ -47,7 +50,7 @@ function Scaffold({children, seo = {}}) {
             <style jsx global>{`
                 html {
                     scroll-behavior: smooth;
-                    font-family: serif;
+                    font-family: 'Noto Serif JP', serif;
                     color: #734c3d;
                 }
                 body {

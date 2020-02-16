@@ -41,7 +41,7 @@ function FirstView({image, topText}) {
                 }
                 h1 {
                     font-size: 80px;
-                    font-family: gothic;
+                    font-family: 'Noto Sans JP', gothic, sans-serif;
                     font-weight: bold;
                 }
                 span {
