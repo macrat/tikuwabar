@@ -5,7 +5,7 @@ import Header from '../../components/Header';
 import SectionTitle from '../../components/Section/Title';
 import SectionInner from '../../components/Section/Inner';
 import RawHTML from '../../components/RawHTML';
-import NewsJsonLD from '../../components/News/JsonLD';
+import JsonLD from '../../components/News/JsonLD';
 import BreadList from '../../components/BreadList';
 
 import {getFirstView, getNewsArticle, getSEO} from '../../lib/api';
@@ -38,7 +38,7 @@ function NewsArticle({firstView = {}, article = {}, seo = {}}) {
                     <RawHTML html={article.content} />
                 </SectionInner>
 
-                <NewsJsonLD {...article} seo={seo} />
+                <JsonLD {...article} seo={seo} />
             </article>
 
             <style jsx>{`

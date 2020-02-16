@@ -3,25 +3,18 @@ import Link from 'next/link';
 
 import Section from '../Section';
 import Time from '../Time';
-import Modal from './Modal';
 
 
 function News({news, seo}) {
     return (
         <Section title="お知らせ" id="news">
-            <Head>
-                <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js" />
-            </Head>
-
             <ul>
                 {news.map(x => (
                     <li key={x.id}>
-                        <a on={`tap:${x.id}`} role="button" tabIndex="0">
+                        <Link href="/news/[id]" as={`/news/${x.id}`}><a>
                             <Time time={new Date(x.createdAt)} />
                             {` ${x.title}`}
-                        </a>
-
-                        <Modal {...x} seo={seo} />
+                        </a></Link>
                     </li>
                 ))}
             </ul>
