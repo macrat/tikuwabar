@@ -7,6 +7,7 @@ import SectionTitle from '../../components/Section/Title';
 import SectionInner from '../../components/Section/Inner';
 import BreadList from '../../components/BreadList';
 import Time from '../../components/Time';
+import Footer from '../../components/Footer';
 
 import {getFirstView, getNews, getSEO} from '../../lib/api.js';
 
@@ -49,6 +50,8 @@ function NewsIndex({firstView = {}, news = {}, seo = {}}) {
                     margin: 28px auto;
                 }
             `}</style>
+
+            <Footer {...seo} />
         </Scaffold>
     );
 }

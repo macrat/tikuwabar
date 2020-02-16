@@ -8,6 +8,7 @@ import SectionInner from '../../components/Section/Inner';
 import RawHTML from '../../components/RawHTML';
 import JsonLD from '../../components/News/JsonLD';
 import BreadList from '../../components/BreadList';
+import Footer from '../../components/Footer';
 
 import {getFirstView, getNewsArticle, getSEO} from '../../lib/api';
 
@@ -53,6 +54,8 @@ function NewsArticle({firstView = {}, article = {}, seo = {}}) {
                     margin: 28px auto;
                 }
             `}</style>
+
+            <Footer {...seo} />
         </Scaffold>
     );
 }
