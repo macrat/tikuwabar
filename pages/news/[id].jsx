@@ -21,7 +21,7 @@ function NewsArticle({firstView = {}, article = {}, seo = {}}) {
     return (
         <Scaffold seo={seo}>
             <Head>
-                <title>{`${article.title} | ${seo.siteTitle}`}</title>
+                <title>{`${article.title} | お知らせ | ${seo.siteTitle}`}</title>
                 <meta
                     name="description"
                     content={HtmlToText.fromString(article.rawContent, {
