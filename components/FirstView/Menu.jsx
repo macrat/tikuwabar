@@ -18,16 +18,14 @@ function Menu() {
                         padding: 0;
                     }
                     li {
-                        padding: 14px 8px;
+                        display: block;
                         writing-mode: vertical-lr;
                         letter-spacing: 8px;
                         background-color: rgba(255, 255, 255, 0.7);
-                        display: block;
                     }
                     a {
                         display: block;
-                        width: 100%;
-                        height: 100%;
+                        padding: 14px 8px;
                         text-decoration: none;
                         color: black;
                     }
