@@ -1,7 +1,10 @@
+import Link from 'next/link';
+
+
 function Header({image}) {
     return (
         <header>
-            <h1>ちくわバー</h1>
+            <Link href="/"><a><h1>ちくわバー</h1></a></Link>
             <span>不慣れなおじさん一人でやってます</span>
 
             <style jsx>{`
@@ -18,6 +21,10 @@ function Header({image}) {
                 }
                 span {
                     font-size: 18px;
+                }
+                a {
+                    color: inherit;
+                    text-decoration: none;
                 }
             `}</style>
         </header>
