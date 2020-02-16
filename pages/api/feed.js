@@ -12,7 +12,7 @@ export default async function Feed(req, res) {
     const xml = xmlbuilder.create({
         feed: {
             '@xmlns': 'http://www.w3.org/2005/Atom',
-            id: {'#text': `tag:${req.headers.host},2019:news/atom.xml`},
+            id: {'#text': `tag:${req.headers.host},2019:news/feed.xml`},
             title: {'@type': 'text', '#text': 'ちくわバー'},
             link: {
                 '@rel': 'alternate',
@@ -23,7 +23,7 @@ export default async function Feed(req, res) {
             link: {
                 '@rel': 'self',
                 '@type': 'application/atom+xml',
-                '@href': `https://${req.headers.host}/news/atom.xml`,
+                '@href': `https://${req.headers.host}/news/feed.xml`,
             },
             updated: {
                 '#text': news.reduce((x, y) => x.updatedAt > y.updatedAt ? x : y).updatedAt.toISOString(),

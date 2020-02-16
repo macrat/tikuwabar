@@ -8,7 +8,7 @@ module.exports = {
         modern: true,
         rewrites: async () => [
             {source: '/sitemap.xml', destination: '/api/sitemap'},
-            {source: '/news/atom.xml', destination: '/api/feed'},
+            {source: '/news/feed.xml', destination: '/api/feed'},
         ],
         catchAllRouting: true,
     },

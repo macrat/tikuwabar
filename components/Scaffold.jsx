@@ -8,7 +8,7 @@ function Scaffold({children, seo = {}}) {
         <>
             <Head>
                 <link rel="icon" href="/icon.png" key="favicon" />
-                <link rel="alternate" type="application/atom+xml" href="/news/atom.xml" title="ちくわバーからのお知らせフィード" key="feed" />
+                <link rel="alternate" type="application/atom+xml" href="/news/feed.xml" title="ちくわバーからのお知らせフィード" key="feed" />
 
                 <JsonLD type="BarOrPub" properties={{
                     name: "ちくわバー",
