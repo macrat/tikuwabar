@@ -4,7 +4,7 @@ import {getNews} from '../../lib/api';
 
 
 export default async function Feed(req, res) {
-    res.setHeader('Content-Type', 'text/xml');
+    res.setHeader('Content-Type', 'text/xml; charset=utf-8');
     res.setHeader('Cache-Control', 'max-age=1day, public');
 
     const news = await getNews(100, undefined);

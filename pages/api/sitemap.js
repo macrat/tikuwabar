@@ -4,7 +4,7 @@ import {getNews} from '../../lib/api';
 
 
 export default async function Sitemap(req, res) {
-    res.setHeader('Content-type', 'text/xml');
+    res.setHeader('Content-Type', 'text/xml; charset=utf-8');
     res.setHeader('Cache-Control', 'max-age=1day, public');
 
     const stream = new SitemapStream({hostname: `https://${req.headers.host}`});
