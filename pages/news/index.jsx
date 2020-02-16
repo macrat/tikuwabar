@@ -36,7 +36,7 @@ function NewsIndex({firstView = {}, news = {}, seo = {}}) {
                 <SectionInner>
                     <ul>
                         {news.map(x => (
-                            <li><Link href="/news/[id]" as={`/news/${x.id}`}><a>
+                            <li key={x.id}><Link href="/news/[id]" as={`/news/${x.id}`}><a>
                                 <Time time={new Date(x.createdAt)} />
                                 {` ${x.title}`}
                             </a></Link></li>
