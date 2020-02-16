@@ -1,11 +1,11 @@
 import JsonLD from '../JsonLD';
 
 
-function NewsJsonLD({id, title, content, createdAt, updatedAt, seo}) {
+function NewsJsonLD({id, title, rawContent, createdAt, updatedAt, seo}) {
     return (
         <JsonLD type="NewsArticle" properties={{
             headline: title,
-            articleBody: content,
+            articleBody: rawContent,
             dateCreated: createdAt,
             dateModified: updatedAt,
             datePublished: createdAt,

@@ -21,7 +21,6 @@ function NewsIndex({firstView = {}, news = {}, seo = {}}) {
         <Scaffold seo={seo}>
             <Head>
                 <title>{`お知らせ | ${seo.siteTitle}`}</title>
-                <meta name="robots" content="noindex" key="robots" />
             </Head>
 
             <Header image={firstView.image} />
