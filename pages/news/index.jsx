@@ -1,14 +1,14 @@
 import Head from 'next/head';
+import Link from 'next/link';
 
 import Scaffold from '../../components/Scaffold';
 import Header from '../../components/Header';
 import SectionTitle from '../../components/Section/Title';
 import SectionInner from '../../components/Section/Inner';
-import RawHTML from '../../components/RawHTML';
-import NewsJsonLD from '../../components/News/JsonLD';
 import BreadList from '../../components/BreadList';
+import Time from '../../components/Time';
 
-import {getFirstView, getNewsArticle, getSEO} from '../../lib/api';
+import {getFirstView, getNews, getSEO} from '../../lib/api.js';
 
 
 export const config = {
@@ -16,29 +16,33 @@ export const config = {
 };
 
 
-function NewsArticle({firstView = {}, article = {}, seo = {}}) {
+function NewsIndex({firstView = {}, news = {}, seo = {}}) {
     return (
         <Scaffold seo={seo}>
             <Head>
-                <title>{`${article.title} | ${seo.siteTitle}`}</title>
-                <meta name="description" content={article.content.slice(300)} key="description" />
+                <title>{`お知らせ | ${seo.siteTitle}`}</title>
+                <meta name="robots" content="noindex" key="robots" />
             </Head>
 
             <Header image={firstView.image} />
 
             <BreadList pages={[
                 {title: "お知らせ", href: "/news"},
-                {title: article.title, href: `/news/${article.id}`},
             ]} />
 
             <article>
-                <SectionTitle>{article.title}</SectionTitle>
+                <SectionTitle>お知らせ</SectionTitle>
 
-                <SectionInner timestamp={article.createdAt}>
-                    <RawHTML html={article.content} />
+                <SectionInner>
+                    <ul>
+                        {news.map(x => (
+                            <li><Link href="/news/[id]" as={`/news/${x.id}`}><a>
+                                <Time time={new Date(x.createdAt)} />
+                                {` ${x.title}`}
+                            </a></Link></li>
+                        ))}
+                    </ul>
                 </SectionInner>
-
-                <NewsJsonLD {...article} seo={seo} />
             </article>
 
             <style jsx>{`
@@ -51,13 +55,13 @@ function NewsArticle({firstView = {}, article = {}, seo = {}}) {
 }
 
 
-NewsArticle.getInitialProps = async ({query}) => {
+NewsIndex.getInitialProps = async ({query}) => {
     return {
         firstView: await getFirstView(query.draftKey),
-        article: await getNewsArticle(query.id, query.draftKey),
+        news: await getNews(1000, query.draftKey),
         seo: await getSEO(query.draftKey),
     };
 };
 
 
-export default NewsArticle;
+export default NewsIndex;
