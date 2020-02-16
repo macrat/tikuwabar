@@ -16,7 +16,7 @@ function Opening({preText, afterText}) {
             <amp-iframe
                 height="400"
                 sandbox="allow-scripts allow-same-origin"
-                src="https://calendar.google.com/calendar/embed?height=400&amp;wkst=2&amp;bgcolor=%23795548&amp;ctz=Asia%2FTokyo&amp;src=c2hvamlyLm9vb190bHZsNnVyNDJuajExYzVjODQwNnBraWlyY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23743500&amp;showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;showCalendars=1"
+                src="https://calendar.google.com/calendar/embed?height=400&amp;wkst=2&amp;bgcolor=%23795548&amp;ctz=Asia%2FTokyo&amp;src=c2hvamlyLm9vb190bHZsNnVyNDJuajExYzVjODQwNnBraWlyY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23743500&amp;showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=1&amp;showTz=0&amp;showCalendars=0&amp;mode=AGENDA"
                 frameborder="0"
                 scrolling="no" />
 
