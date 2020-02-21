@@ -1,5 +1,6 @@
 import Menu from './Menu';
 import TopText from './TopText';
+import Instagram from '../Instagram';
 
 
 function FirstView({image, topText}) {
@@ -13,6 +14,10 @@ function FirstView({image, topText}) {
                 </div>
             </div>
             <TopText text={topText} />
+
+            <a href="https://www.instagram.com/tikuwa_world/" target="_blank">
+                <Instagram />
+            </a>
 
             <style jsx>{`
                 header {
@@ -47,6 +52,13 @@ function FirstView({image, topText}) {
                 span {
                     font-size: 24px;
                     margin-bottom: 16px;
+                }
+                a {
+                    position: absolute;
+                    color: white;
+                    text-decoration: none;
+                    top: 0;
+                    right: 0;
                 }
                 @media screen and (max-width: 460px) {
                     header {
