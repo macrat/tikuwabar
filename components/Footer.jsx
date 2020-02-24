@@ -1,8 +1,14 @@
+import Link from 'next/link';
+
+
 function Footer({location, telephone}) {
     return (
         <footer>
             {location} <address><a href={`tel:${telephone}`}>{telephone}</a></address><br />
-            <small>&copy; 2020 ちくわバー All rights reserved.</small>
+            <small>
+                <span><Link href="/privacy-policy"><a>プライバシーポリシー</a></Link></span>
+                <span>&copy; 2020 ちくわバー All rights reserved.</span>
+            </small>
 
             <style jsx>{`
                 footer {
@@ -19,6 +25,10 @@ function Footer({location, telephone}) {
                 }
                 small {
                     font-size: unset;
+                }
+                span {
+                    display: inline-block;
+                    margin: 0 8px;
                 }
             `}</style>
         </footer>
