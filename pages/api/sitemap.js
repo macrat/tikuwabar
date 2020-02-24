@@ -13,7 +13,6 @@ export default async function Sitemap(req, res) {
     stream.write({
         url: '/',
         priority: 1.0,
-        lastmod: process.env.BUILT_TIME,
     });
 
     const news = await getNews(1000, undefined);
@@ -22,6 +21,11 @@ export default async function Sitemap(req, res) {
         url: '/news',
         priority: 0.0,
         lastmod: news.reduce((x, y) => x.updatedAt > y.updatedAt ? x : y).updatedAt,
+    });
+
+    stream.write({
+        url: '/privacy-policy',
+        priority: 0.0,
     });
 
     news.forEach(article => {
