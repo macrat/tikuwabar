@@ -27,6 +27,8 @@ function NewsArticle({firstView = {}, article = {}, seo = {}}) {
     return (
         <Scaffold seo={seo}>
             <Head>
+                <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" key="amp--social-share" />
+
                 <title>{`${article.title} | お知らせ | ${seo.siteTitle}`}</title>
                 <meta name="description" content={description} key="description" />
 
@@ -54,6 +56,14 @@ function NewsArticle({firstView = {}, article = {}, seo = {}}) {
 
                 <SectionInner timestamp={article.createdAt}>
                     <RawHTML html={article.content} />
+
+                    <div>
+                        <amp-social-share type="facebook" data-param-app_id="506386943395976" />
+                        <amp-social-share type="twitter" />
+                        <amp-social-share type="hatena_bookmark" data-share-endpoint={`http://b.hatena.ne.jp/entry/https://tikuwabar.shojir.ooo/news/${article.id}`}>B!</amp-social-share>
+                        <amp-social-share type="line" data-share-endpoint="http://line.me/R/msg/text/?TITLE%3ASOURCE_URL" />
+                        <amp-social-share type="system" />
+                    </div>
                 </SectionInner>
 
                 <JsonLD {...article} seo={seo} />
@@ -62,6 +72,27 @@ function NewsArticle({firstView = {}, article = {}, seo = {}}) {
             <style jsx>{`
                 article {
                     margin: 28px auto;
+                }
+                div {
+                    float: right;
+                    margin: 0 -6px;
+                }
+                amp-social-share {
+                    margin: 0 6px;
+                }
+                amp-social-share[type=hatena_bookmark] {
+                    width: 60px;
+                    height: 44px;
+                    font-family: Verdana;
+                    background-color: #00A4DE;
+                    font-weight: 700;
+                    color: #fff;
+                    line-height: 44px;
+                    text-align: center;
+                    font-size: 28px;
+                }
+                amp-social-share[type=system] {
+                    background-color: #734c3d;
                 }
             `}</style>
 
