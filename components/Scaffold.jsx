@@ -1,13 +1,17 @@
 import Head from 'next/head';
+import {useRouter} from 'next/router';
 
 import JsonLD from './JsonLD';
 
 
 function Scaffold({children, seo = {}}) {
+    const router = useRouter();
+
     return (
         <>
             <Head>
                 <link rel="icon" href="/icon.png" key="favicon" />
+                <link rel="canonical" href={`https://tikuwabar.shojir.ooo${router.asPath}`} />
                 <link rel="alternate" type="application/atom+xml" href="/news/feed.xml" title="ちくわバーからのお知らせフィード" key="feed" />
                 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Serif+JP&display=swap" rel="stylesheet" />
                 <link href="https://fonts.gstatic.com" rel="preconnect" />
