@@ -10,7 +10,14 @@ function Scaffold({children, seo = {}}) {
     return (
         <>
             <Head>
-                <link rel="icon" href="/icon.png" key="favicon" />
+                <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" key="icon--192-png" />
+                <link rel="icon" href="/icon-192.webp" type="image/webp" sizes="192x192" key="icon--192-webp" />
+                <link rel="icon" href="/icon-96.png" type="image/png" sizes="96x96" key="icon--96-png" />
+                <link rel="icon" href="/icon-96.webp" type="image/webp" sizes="96x96" key="icon--96-webp" />
+                <link rel="icon" href="/icon-32.png" type="image/png" sizes="32x32" key="icon--32-png" />
+                <link rel="icon" href="/icon-32.webp" type="image/webp" sizes="32x32" key="icon--32-webp" />
+                <link rel="apple-touch-icon" href="/icon-180.png" type="image/png" sizes="180x180" key="apple-touch-icon" />
+
                 <link rel="canonical" href={`https://tikuwabar.shojir.ooo${router.asPath}`} />
                 <link rel="alternate" type="application/atom+xml" href="/news/feed.xml" title="ちくわバーからのお知らせフィード" key="feed" />
                 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Serif+JP&display=swap" rel="stylesheet" />
@@ -21,7 +28,7 @@ function Scaffold({children, seo = {}}) {
                     name: "ちくわバー",
                     '@id': 'https://tikuwabar.shojir.ooo/',
                     url: 'https://tikuwabar.shojir.ooo/',
-                    logo: 'https://tikuwabar.shojir.ooo/icon.png',
+                    logo: 'https://tikuwabar.shojir.ooo/icon-512.png',
                     acceptsReservations: false,
                     openingHours: seo.openingHours,
                     priceRange: seo.priceRange,
