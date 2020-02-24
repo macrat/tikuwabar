@@ -38,6 +38,7 @@ function NewsArticle({firstView = {}, article = {}, seo = {}}) {
                 <meta property="og:article:modified_time" content={article.createdAt.toISOString()} key="ogp--modified" />
                 <meta property="og:description" content={description} key="ogp--description" />
                 <meta property="og:image" content={seo.image.url} key="ogp--image" />
+                <meta property="twitter:card" content="summary" key="twitter-card" />
             </Head>
 
             <Header image={firstView.image} />

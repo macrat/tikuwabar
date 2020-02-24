@@ -30,6 +30,7 @@ function Index({firstView = {}, news = [], schedule = {}, pricing = {}, access =
                 <meta property="og:description" content={seo.description} key="ogp--description" />
                 <meta property="og:image" content={seo.image.url} key="ogp--image" />
                 <meta property="og:locale" content="ja_JP" key="ogp--locale" />
+                <meta property="twitter:card" content="summary" key="twitter-card" />
             </Head>
 
             <FirstView {...firstView} />
