@@ -22,6 +22,14 @@ function Index({firstView = {}, news = [], schedule = {}, pricing = {}, access =
             <Head>
                 <title>{seo.siteTitle}</title>
                 <meta name="description" content={seo.description} key="description" />
+
+                <meta property="og:site_name" content="ちくわバー" key="ogp--site_name" />
+                <meta property="og:title" content="ちくわバー" key="ogp--title" />
+                <meta property="og:url" content="https://tikuwabar.shojir.ooo/" key="ogp--url" />
+                <meta property="og:type" content="website" key="ogp--type" />
+                <meta property="og:description" content={seo.description} key="ogp--description" />
+                <meta property="og:image" content={seo.image.url} key="ogp--image" />
+                <meta property="og:locale" content="ja_JP" key="ogp--locale" />
             </Head>
 
             <FirstView {...firstView} />

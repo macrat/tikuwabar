@@ -19,17 +19,25 @@ export const config = {
 
 
 function NewsArticle({firstView = {}, article = {}, seo = {}}) {
+    const description = HtmlToText.fromString(article.rawContent, {
+        ignoreHref: true,
+        ignoreImage: true,
+    });
+
     return (
         <Scaffold seo={seo}>
             <Head>
                 <title>{`${article.title} | お知らせ | ${seo.siteTitle}`}</title>
-                <meta
-                    name="description"
-                    content={HtmlToText.fromString(article.rawContent, {
-                        ignoreHref: true,
-                        ignoreImage: true,
-                    })}
-                    key="description" />
+                <meta name="description" content={description} key="description" />
+
+                <meta property="og:site_name" content="ちくわバー" key="ogp--site_name" />
+                <meta property="og:title" content={article.title} key="ogp--title" />
+                <meta property="og:url" content={`https://tikuwabar.shojir.ooo/news/${article.id}`} key="ogp--url" />
+                <meta property="og:type" content="article" key="ogp--type" />
+                <meta property="og:article:published_time" content={article.createdAt.toISOString()} key="ogp--published" />
+                <meta property="og:article:modified_time" content={article.createdAt.toISOString()} key="ogp--modified" />
+                <meta property="og:description" content={description} key="ogp--description" />
+                <meta property="og:image" content={seo.image.url} key="ogp--image" />
             </Head>
 
             <Header image={firstView.image} />
