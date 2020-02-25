@@ -9,7 +9,7 @@ export default function BreadList({pages=[]}) {
             <li><Link href="/"><a>トップ</a></Link></li>
 
             {pages.map(p => (
-                <li><Link href={p.href}><a>{p.title}</a></Link></li>
+                <li key={p.href}><Link href={p.href}><a>{p.title}</a></Link></li>
             ))}
 
             <JsonLD type="BreadcrumbList" properties={{
