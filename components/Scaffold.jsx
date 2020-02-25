@@ -67,6 +67,8 @@ function Scaffold({children, seo = {}}) {
                 body {
                     background: linear-gradient(#734c3d, #734c3d, #e4d8d3);
                     min-height: 100vh;
+                    margin: 0;
+                    padding: 0;
                 }
             `}</style>
         </>
