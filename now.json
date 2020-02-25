@@ -5,5 +5,11 @@
       "GA_MEASUREMENT_ID": "@tikuwabar-ga-id"
     }
   },
-  "alias": "tikuwabar.shojir.ooo"
+  "alias": "tikuwabar.shojir.ooo",
+  "routes": [
+    {"src": "/", "headers": {"cache-control": "max-age=1d, s-maxage=6h, public"}},
+    {"src": "/privacy-policy", "headers": {"cache-control": "max-age=7d, s-maxage=1d, public"}},
+    {"src": "/news", "headers": {"cache-control": "max-age=1d, s-maxage=6h, public"}},
+    {"src": "/news/.*", "headers": {"cache-control": "max-age=7d, s-maxage=1d, public"}}
+  ]
 }
