@@ -10,7 +10,7 @@ import JsonLD from '../../components/News/JsonLD';
 import BreadList from '../../components/BreadList';
 import Footer from '../../components/Footer';
 
-import {getFirstView, getNewsArticle, getSEO} from '../../lib/api';
+import {getFirstView, getNews, getNewsArticle, getSEO} from '../../lib/api';
 
 
 export const config = {
@@ -18,7 +18,11 @@ export const config = {
 };
 
 
-function NewsArticle({firstView = {}, article = {}, seo = {}}) {
+function NewsArticle({firstView, article, seo}) {
+    if (!firstView || !article || !seo) {
+        return <></>;
+    }
+
     const description = HtmlToText.fromString(article.rawContent, {
         ignoreHref: true,
         ignoreImage: true,
@@ -36,8 +40,8 @@ function NewsArticle({firstView = {}, article = {}, seo = {}}) {
                 <meta property="og:title" content={article.title} key="ogp--title" />
                 <meta property="og:url" content={`https://tikuwabar.shojir.ooo/news/${article.id}`} key="ogp--url" />
                 <meta property="og:type" content="article" key="ogp--type" />
-                <meta property="og:article:published_time" content={article.createdAt.toISOString()} key="ogp--published" />
-                <meta property="og:article:modified_time" content={article.createdAt.toISOString()} key="ogp--modified" />
+                <meta property="og:article:published_time" content={new Date(article.createdAt).toISOString()} key="ogp--published" />
+                <meta property="og:article:modified_time" content={new Date(article.updatedAt).toISOString()} key="ogp--modified" />
                 <meta property="og:description" content={description} key="ogp--description" />
                 <meta property="og:image" content={seo.image.url} key="ogp--image" />
                 <meta property="fb:app_id" content="506386943395976" key="fb--app_id" />
@@ -54,7 +58,7 @@ function NewsArticle({firstView = {}, article = {}, seo = {}}) {
             <article>
                 <SectionTitle>{article.title}</SectionTitle>
 
-                <SectionInner timestamp={article.createdAt}>
+                <SectionInner timestamp={new Date(article.createdAt)}>
                     <RawHTML html={article.content} />
 
                     <div>
@@ -102,15 +106,18 @@ function NewsArticle({firstView = {}, article = {}, seo = {}}) {
 }
 
 
-NewsArticle.getInitialProps = async ({query, res}) => {
-    res.setHeader('Cache-Control', 'max-age=1d, s-maxage=30m, public');
+export const unstable_getStaticPaths = async () => ({
+    paths: (await getNews(1000, undefined)).map(x => ({params: {id: x.id}})),
+});
 
-    return {
-        firstView: await getFirstView(query.draftKey),
-        article: await getNewsArticle(query.id, query.draftKey),
-        seo: await getSEO(query.draftKey),
-    };
-};
+
+export const unstable_getStaticProps = async ({params}) => ({
+    props: {
+        firstView: await getFirstView(),
+        article: await getNewsArticle(params.id),
+        seo: await getSEO(),
+    },
+});
 
 
 export default NewsArticle;

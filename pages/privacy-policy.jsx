@@ -57,15 +57,13 @@ function PrivcacyPolicy({firstView = {}, privacyPolicy = {}, seo = {}}) {
 }
 
 
-PrivcacyPolicy.getInitialProps = async ({query, res}) => {
-    res.setHeader('Cache-Control', 'max-age=1d, s-maxage=10m, public');
-
-    return {
-        firstView: await getFirstView(query.draftKey),
-        privacyPolicy: await getPrivacyPolicy(query.draftKey),
-        seo: await getSEO(query.draftKey),
-    };
-};
+export const unstable_getStaticProps = async () => ({
+    props: {
+        firstView: await getFirstView(),
+        privacyPolicy: await getPrivacyPolicy(),
+        seo: await getSEO(),
+    },
+});
 
 
 export default PrivcacyPolicy;

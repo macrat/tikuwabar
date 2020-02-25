@@ -49,18 +49,16 @@ function Index({firstView = {}, news = [], schedule = {}, pricing = {}, access =
 }
 
 
-Index.getInitialProps = async ({res, query}) => {
-    res.setHeader('Cache-Control', 'max-age=6h, s-maxage=5m, public');
-
-    return {
-        firstView: await getFirstView(query.draftKey),
-        news: await getNews(query.draftKey),
-        schedule: await getSchedule(query.draftKey),
-        pricing: await getPricing(query.draftKey),
-        access: await getAccess(query.draftKey),
-        seo: await getSEO(query.draftKey),
-    };
-};
+export const unstable_getStaticProps = async () => ({
+    props: {
+        firstView: await getFirstView(),
+        news: await getNews(),
+        schedule: await getSchedule(),
+        pricing: await getPricing(),
+        access: await getAccess(),
+        seo: await getSEO(),
+    },
+});
 
 
 export default Index;
