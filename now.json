@@ -7,9 +7,9 @@
   },
   "alias": "tikuwabar.shojir.ooo",
   "routes": [
-    {"src": "/", "headers": {"cache-control": "max-age=1d, s-maxage=6h, public"}},
-    {"src": "/privacy-policy", "headers": {"cache-control": "max-age=7d, s-maxage=1d, public"}},
-    {"src": "/news", "headers": {"cache-control": "max-age=1d, s-maxage=6h, public"}},
-    {"src": "/news/.*", "headers": {"cache-control": "max-age=7d, s-maxage=1d, public"}}
+    {"src": "/", "headers": {"cache-control": "max-age=86400, s-maxage=21600, public"}},
+    {"src": "/privacy-policy", "headers": {"cache-control": "max-age=604800, s-maxage=86400, public"}},
+    {"src": "/news", "headers": {"cache-control": "max-age=86400, s-maxage=21600, public"}},
+    {"src": "/news/.*", "headers": {"cache-control": "max-age=604800, s-maxage=86400, public"}}
   ]
 }
