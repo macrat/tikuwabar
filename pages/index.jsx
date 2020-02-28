@@ -10,6 +10,8 @@ import Footer from '../components/Footer';
 
 import {getFirstView, getNews, getSchedule, getPricing, getAccess, getSEO} from '../lib/api';
 
+import Loading from '../components/Loading';
+
 
 export const config = {
     amp: true,
