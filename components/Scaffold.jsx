@@ -10,6 +10,8 @@ function Scaffold({children, seo = {}}) {
     return (
         <>
             <Head>
+                <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js" />
+
                 <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" key="icon--192-png" />
                 <link rel="icon" href="/icon-192.webp" type="image/webp" sizes="192x192" key="icon--192-webp" />
                 <link rel="icon" href="/icon-96.png" type="image/png" sizes="96x96" key="icon--96-png" />
@@ -20,9 +22,6 @@ function Scaffold({children, seo = {}}) {
 
                 <link rel="canonical" href={`https://tikuwabar.shojir.ooo${router.asPath}`} />
                 <link rel="alternate" type="application/atom+xml" href="/news/feed.xml" title="ちくわバーからのお知らせフィード" key="feed" />
-                <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Serif+JP&display=swap" rel="stylesheet" />
-                <link href="https://fonts.gstatic.com" rel="preconnect" />
-                <link href="https://fonts.gstatic.com" rel="dns-prefetch" />
 
                 <JsonLD type="BarOrPub" properties={{
                     name: "ちくわバー",
@@ -37,8 +36,6 @@ function Scaffold({children, seo = {}}) {
                     telephone: seo.telephone,
                     image: seo.image.url,
                 }} />
-
-                <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js" />
             </Head>
 
             <amp-analytics type="gtag" data-credentials="include">
@@ -69,6 +66,15 @@ function Scaffold({children, seo = {}}) {
                     min-height: 100vh;
                     margin: 0;
                     padding: 0;
+                }
+                @font-face {
+                    font-family: 'Noto Serif JP';
+                    font-display: swap;
+                    font-style: normal;
+                    font-weight: 400;
+                    src: local('Noto Serif JP'), local('NotoSerifJP-Regular'),
+                         url('/fonts/noto-serif-jp-v7-japanese_latin-regular.woff2') format('woff2'),
+                         url('/fonts/noto-serif-jp-v7-japanese_latin-regular.woff') format('woff');
                 }
             `}</style>
         </>
