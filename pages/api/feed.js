@@ -25,9 +25,9 @@ export default async function Feed(req, res) {
                 '@type': 'application/atom+xml',
                 '@href': `https://${req.headers.host}/news/feed.xml`,
             },
-            updated: {
+            updated: news.length > 0 ? {
                 '#text': news.reduce((x, y) => x.updatedAt > y.updatedAt ? x : y).updatedAt.toISOString(),
-            },
+            } : undefined,
             entry: news.map(article => ({
                 title: {'#text': article.title},
                 id: {'#text': `tag:${req.headers.host},2019:news/${article.id}`},
