@@ -20,7 +20,7 @@ export default async function Sitemap(req, res) {
     stream.write({
         url: '/news',
         priority: 0.0,
-        lastmod: news.reduce((x, y) => x.updatedAt > y.updatedAt ? x : y).updatedAt,
+        lastmod: news.length > 0 ? news.reduce((x, y) => x.updatedAt > y.updatedAt ? x : y).updatedAt : undefined,
     });
 
     stream.write({
