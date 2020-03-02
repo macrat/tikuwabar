@@ -42,7 +42,7 @@ export default async function Feed(req, res) {
                     name: {'#text': 'ちくわバー'},
                 },
                 content: {
-                    '@type': 'html',
+                    '@type': 'text/html',
                     '#text': article.rawContent,
                 },
             })),
