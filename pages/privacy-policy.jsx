@@ -57,7 +57,7 @@ function PrivcacyPolicy({firstView = {}, privacyPolicy = {}, seo = {}}) {
 }
 
 
-export const unstable_getStaticProps = async () => ({
+export const getStaticProps = async () => ({
     props: {
         firstView: await getFirstView(),
         privacyPolicy: await getPrivacyPolicy(),

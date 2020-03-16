@@ -57,7 +57,7 @@ function NewsIndex({firstView = {}, news = {}, seo = {}}) {
 }
 
 
-export const unstable_getStaticProps = async () => ({
+export const getStaticProps = async () => ({
     props: {
         firstView: await getFirstView(),
         news: await getNews(1000),

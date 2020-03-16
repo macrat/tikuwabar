@@ -19,10 +19,6 @@ export const config = {
 
 
 function NewsArticle({firstView, article, seo}) {
-    if (!firstView || !article || !seo) {
-        return <></>;
-    }
-
     const description = HtmlToText.fromString(article.rawContent, {
         ignoreHref: true,
         ignoreImage: true,
@@ -106,12 +102,13 @@ function NewsArticle({firstView, article, seo}) {
 }
 
 
-export const unstable_getStaticPaths = async () => ({
+export const getStaticPaths = async () => ({
+    fallback: false,
     paths: (await getNews(1000, undefined)).map(x => ({params: {id: x.id}})),
 });
 
 
-export const unstable_getStaticProps = async ({params}) => ({
+export const getStaticProps = async ({params}) => ({
     props: {
         firstView: await getFirstView(),
         article: await getNewsArticle(params.id),

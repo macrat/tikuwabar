@@ -58,7 +58,7 @@ function Index({firstView = {}, news = [], schedule = {}, pricing = {}, access =
 }
 
 
-export const unstable_getStaticProps = async () => ({
+export const getStaticProps = async () => ({
     props: {
         firstView: await getFirstView(),
         news: await getNews(),
