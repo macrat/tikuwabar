@@ -22,12 +22,12 @@ function Index({firstView = {}, news = [], schedule = {}, pricing = {}, access =
     return (
         <Scaffold seo={seo}>
             <Head>
-                <link href="https://calendar.google.com" rel="preconnect dns-prefetch" crossorigin />
-                <link href="https://www.google.com" rel="preconnect dns-prefetch" crossorigin />
-                <link href="https://maps.google.com" rel="preconnect dns-prefetch" crossorigin />
-                <link href="https://apis.google.com" rel="preconnect dns-prefetch" crossorigin />
-                <link href={process.env.GOOGLE_CALENDAR_URL} rel="preload" as="document" type="text/html" crossorigin />
-                <link href={process.env.GOOGLE_MAP_URL} rel="preload" as="document" type="text/html" crossorigin />
+                <link href="https://calendar.google.com" rel="preconnect dns-prefetch" crossOrigin="anonymous" />
+                <link href="https://www.google.com" rel="preconnect dns-prefetch" crossOrigin="anonymous" />
+                <link href="https://maps.google.com" rel="preconnect dns-prefetch" crossOrigin="anonymous" />
+                <link href="https://apis.google.com" rel="preconnect dns-prefetch" crossOrigin="anonymous" />
+                <link href={process.env.GOOGLE_CALENDAR_URL} rel="preload" as="document" type="text/html" crossOrigin="anonymous" />
+                <link href={process.env.GOOGLE_MAP_URL} rel="preload" as="document" type="text/html" crossOrigin="anonymous" />
 
                 <title>{seo.siteTitle}</title>
                 <meta name="description" content={seo.description} key="description" />
