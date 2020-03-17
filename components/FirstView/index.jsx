@@ -1,5 +1,6 @@
 import Menu from './Menu';
 import TopText from './TopText';
+import RawHTML from '../RawHTML';
 import Instagram from '../Instagram';
 
 
@@ -13,7 +14,9 @@ function FirstView({image, topText}) {
                     <Menu />
                 </div>
             </div>
-            <TopText text={topText} />
+            <TopText>
+                <RawHTML html={topText} />
+            </TopText>
 
             <a href="https://www.instagram.com/tikuwa_world/" target="_blank">
                 <Instagram />
