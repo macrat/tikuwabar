@@ -92,6 +92,7 @@ function FirstView({image, topText}) {
                 }
                 img {
                     width: 380px;
+                    max-width: 100%;
                 }
                 span {
                     font-size: 24px;
