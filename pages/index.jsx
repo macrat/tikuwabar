@@ -14,7 +14,7 @@ import Loading from '../components/Loading';
 
 
 export const config = {
-    amp: true,
+    amp: false,
 };
 
 
