@@ -9,7 +9,7 @@ function FirstView({image, topText}) {
         <header>
             <div className="first-view--menu-wrapper">
                 <div className="first-view--menu">
-                    <h1>ちくわバー</h1>
+                    <h1><img alt="ちくわバー" src="/logo/dark.png" /></h1>
                     <span>不慣れなおじさん一人でやってます</span>
                     <Menu />
                 </div>
@@ -47,10 +47,8 @@ function FirstView({image, topText}) {
                     width: 100%;
                     color: white;
                 }
-                h1 {
-                    font-size: 80px;
-                    font-family: 'Noto Sans JP', gothic, sans-serif;
-                    font-weight: bold;
+                img {
+                    width: 380px;
                 }
                 span {
                     font-size: 24px;
