@@ -25,7 +25,7 @@ export default async function Feed(req, res) {
                 '@href': `https://${req.headers.host}/news/feed.xml`,
             }],
             updated: news.length > 0 ? {
-                '#text': news.reduce((x, y) => x.updatedAt > y.updatedAt ? x : y).updatedAt.toISOString(),
+                '#text': news.reduce((x, y) => x.updatedAt > y.updatedAt ? x : y).updatedAt,
             } : undefined,
             entry: news.map(article => ({
                 title: {'#text': article.title},
@@ -36,8 +36,8 @@ export default async function Feed(req, res) {
                     '@hreflang': 'ja',
                     '@href': `https://${req.headers.host}/news/${article.id}`,
                 },
-                published: {'#text': article.createdAt.toISOString()},
-                updated: {'#text': article.updatedAt.toISOString()},
+                published: {'#text': article.createdAt},
+                updated: {'#text': article.updatedAt},
                 author: {
                     name: {'#text': 'ちくわバー'},
                 },
