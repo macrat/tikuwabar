@@ -48,13 +48,13 @@ function FirstView({image, topText}) {
 
     return (
         <header>
-            <div className="first-view--menu-wrapper">
-                <div className="first-view--menu">
-                    <h1><img alt="ちくわバー" src={`/logo/${logo}.png`} /></h1>
-                    <span>不慣れなおじさん一人でやってます</span>
-                    <Menu />
-                </div>
+            <div>
+                <h1><img alt="ちくわバー" src={`/logo/${logo}.png`} /></h1>
+                <span>不慣れなおじさん一人でやってます</span>
             </div>
+            <nav>
+                <Menu />
+            </nav>
             <TopText>
                 <RawHTML html={topText} />
             </TopText>
@@ -73,15 +73,18 @@ function FirstView({image, topText}) {
                     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.5)), url("${image.url}");
                     background-size: cover;
                 }
-                .first-view--menu-wrapper {
+                div {
+                    position: absolute;
+                    top: 12px;
+                    left: 12px;
+                }
+                nav {
+                    position: absolute;
+                    bottom: 240px;
                     display: flex;
                     justify-content: center;
-                    position: absolute;
-                    top: 70px;
+                    align-items: center;
                     width: 100%;
-                }
-                .first-view--menu {
-                    text-align: center;
                 }
                 h1, span {
                     display: block;
@@ -105,17 +108,26 @@ function FirstView({image, topText}) {
                     top: 0;
                     right: 0;
                 }
+                @media screen and (max-width: 740px) {
+                    div {
+                        text-align: center;
+                        top: 24px;
+                        right: 12px;
+                    }
+                }
                 @media screen and (max-width: 460px) {
                     header {
                         position: unset;
                         height: auto;
                     }
-                    .first-view--menu-wrapper {
+                    div {
                         position: unset;
-                        margin-bottom: 32px;
+                    }
+                    nav {
+                        position: unset;
                     }
                     h1 {
-                        margin-top: 32px;
+                        padding-top: 32px;
                         font-size: 75px;
                     }
                 }

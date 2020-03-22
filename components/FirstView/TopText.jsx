@@ -14,6 +14,7 @@ function TopText({children}) {
                     width: 100%;
                     display: flex;
                     justify-content: center;
+                    margin-top: 16px;
                 }
                 article {
                     margin: 12px auto 8px;
@@ -27,7 +28,6 @@ function TopText({children}) {
                 @media screen and (max-width: 460px) {
                     div {
                         position: unset;
-                        padding: 8px 4px;
                     }
                 }
             `}</style>
