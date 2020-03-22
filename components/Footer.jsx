@@ -14,7 +14,7 @@ function Footer({location, telephone}) {
                 footer {
                     text-align: center;
                     font-size: smaller;
-                    color: rgba(20, 10, 0, .6);
+                    color: white;
                 }
                 a {
                     color: inherit;

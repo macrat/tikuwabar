@@ -9,7 +9,7 @@ function TopText({children}) {
                 div {
                     position: absolute;
                     bottom: 0;
-                    color: #744917;
+                    color: #2d1a12;
                     background-color: rgba(255, 255, 255, 0.7);
                     width: 100%;
                     display: flex;

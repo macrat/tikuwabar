@@ -59,10 +59,10 @@ function Scaffold({children, seo = {}}) {
                 html {
                     scroll-behavior: smooth;
                     font-family: 'Noto Serif JP', serif;
-                    color: #734c3d;
+                    color: #2d1a12;
                 }
                 body {
-                    background: linear-gradient(#734c3d, #734c3d, #e4d8d3);
+                    background: linear-gradient(#2d1a12, #2d1a12, #6d615b);
                     min-height: 100vh;
                     margin: 0;
                     padding: 0;
