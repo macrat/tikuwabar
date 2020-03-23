@@ -6,7 +6,15 @@ import Instagram from './Instagram';
 function Header({image}) {
     return (
         <header>
-            <Link href="/"><a><h1>ちくわバー</h1></a></Link>
+            <Link href="/"><a>
+                <amp-img
+                    alt="ちくわバー"
+                    width="210"
+                    height="56"
+                    layout="intrinsic"
+                    srcset="/img/logo.png 1x, /img/logo@2x.png 2x"
+                    src="/img/logo.png" />
+            </a></Link>
             <span>不慣れなおじさん一人でやってます</span>
 
             <a className="instagram" href="https://www.instagram.com/tikuwa_world/" target="_blank">
@@ -20,12 +28,6 @@ function Header({image}) {
                     background: url("${image.url}");
                     background-size: cover;
                     padding: 6px 8px 16px;
-                }
-                h1 {
-                    display: inline-block;
-                    margin: 0;
-                    font-family: gothic;
-                    font-size: 40px;
                 }
                 span {
                     display: block;
