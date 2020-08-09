@@ -63,6 +63,7 @@ export const getStaticProps = async () => ({
         news: await getNews(1000),
         seo: await getSEO(),
     },
+    revalidate: 1,
 });
 
 

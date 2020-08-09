@@ -67,6 +67,7 @@ export const getStaticProps = async () => ({
         access: await getAccess(),
         seo: await getSEO(),
     },
+    revalidate: 1,
 });
 
 

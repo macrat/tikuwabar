@@ -13,10 +13,12 @@ function NewsArticlePreview(props) {
 }
 
 
-NewsArticlePreview.getInitialProps = async ({params, query}) => ({
-    firstView: await getFirstView(),
-    article: await getNewsArticle(query.id, query.draftKey),
-    seo: await getSEO(),
+export const getServerSideProps = async ({params, query}) => ({
+    props: {
+        firstView: await getFirstView(),
+        article: await getNewsArticle(query.id, query.draftKey),
+        seo: await getSEO(),
+    },
 });
 
 
