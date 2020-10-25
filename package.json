@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/macrat/tikuwabar#readme",
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.0",
     "html-to-text": "^5.1.1",
     "next": "^9.5.1",
     "react": "^17.0.0",
