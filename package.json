@@ -23,7 +23,7 @@
   "dependencies": {
     "axios": "^0.21.0",
     "html-to-text": "^5.1.1",
-    "next": "^9.5.5",
+    "next": "^10.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "sitemap": "^6.3.2",
